@@ -1,0 +1,12 @@
+.menu > button.btn {
+    margin-bottom: 10px;
+    width: 100px;
+    text-transform: uppercase;
+}
+
+.menu > button.selected {
+    margin-left: 10px;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
