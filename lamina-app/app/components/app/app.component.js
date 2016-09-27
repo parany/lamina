@@ -14,7 +14,7 @@ var AppComponent = (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'deftook-app',
+            selector: 'lamina-app',
             templateUrl: 'app/components/app/app.component.html',
             styleUrls: ['app/components/app/app.component.css'],
         }), 

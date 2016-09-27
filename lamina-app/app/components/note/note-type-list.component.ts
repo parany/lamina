@@ -6,10 +6,10 @@ import { NoteTypeService } from '../../services/note-type.service';
 
 @Component({
   selector: 'note-list',
-  templateUrl: 'app/components/note/note-list.component.html',
+  templateUrl: 'app/components/note/note-type-list.component.html',
   styleUrls: ['app/components/note/note.css']
 })
-export class NoteListComponent implements OnInit {
+export class NoteTypeListComponent implements OnInit {
   items: NoteType[] = [];
 
   private allContacts: NoteType[];
