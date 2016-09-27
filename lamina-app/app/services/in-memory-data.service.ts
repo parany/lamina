@@ -1,6 +1,11 @@
 import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 
-import { Hero, Contact, Group, PhoneNumber, PhoneNumberType } from '../models/index';
+import { Hero, Contact, Group, PhoneNumber, PhoneNumberType, NoteType } from '../models/index';
+
+var noteTypes: NoteType[] = [
+  { label: 'Mail to send', description: 'Write a mail to sent in the near future' },
+  { label: 'Shopping list', description: 'Dress shopping list' },
+];
 
 var heroes: Hero[] = [
   { id: 11, name: 'Mr. Nice' },
@@ -81,6 +86,6 @@ var contacts: Contact[] = [
 
 export class InMemoryDataService implements InMemoryWebApiModule {
   createDb() {
-    return { heroes, contacts };
+    return { heroes, contacts, noteTypes };
   }
 }

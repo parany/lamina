@@ -4,10 +4,10 @@ node_modules
 # deftook
 npm-debug.log.*
 npm-debug.log
-public/typings
+lamina-app/typings
 *.js.map
-public/app/**/*.js
+lamina-app/app/**/*.js
 
 #IDE configs
-public/.idea/
+lamina-app/.idea/
 

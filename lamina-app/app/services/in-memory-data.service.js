@@ -1,5 +1,9 @@
 "use strict";
 var index_1 = require('../models/index');
+var noteTypes = [
+    { label: 'Mail to send', description: 'Write a mail to sent in the near future' },
+    { label: 'Shopping list', description: 'Dress shopping list' },
+];
 var heroes = [
     { id: 11, name: 'Mr. Nice' },
     { id: 12, name: 'Narco' },
@@ -78,7 +82,7 @@ var InMemoryDataService = (function () {
     function InMemoryDataService() {
     }
     InMemoryDataService.prototype.createDb = function () {
-        return { heroes: heroes, contacts: contacts };
+        return { heroes: heroes, contacts: contacts, noteTypes: noteTypes };
     };
     return InMemoryDataService;
 }());

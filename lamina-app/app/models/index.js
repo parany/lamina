@@ -6,4 +6,5 @@ __export(require('./contact'));
 __export(require('./group'));
 __export(require('./phone-number'));
 __export(require('./hero'));
+__export(require('./note-type'));
 //# sourceMappingURL=index.js.map
