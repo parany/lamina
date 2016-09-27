@@ -5,16 +5,17 @@ import { HeroesComponent }      from './components/heroes/heroes.component';
 import { ContactListComponent }      from './components/contact/contact-list.component';
 import { ContactAddComponent }      from './components/contact/contact-add.component';
 import { HeroDetailComponent }      from './components/hero-detail/hero-detail.component';
+import { NoteListComponent }      from './components/note/note-list.component';
 
 const appRoutes: Routes = [
     {
-        path: 'contact',
-        component: ContactListComponent
+        path: '',
+        redirectTo: '/note',
+        pathMatch: 'full'
     },
     {
-        path: '',
-        redirectTo: '/contact',
-        pathMatch: 'full'
+        path: 'note',
+        component: NoteListComponent
     },
     {
         path: 'heroes',

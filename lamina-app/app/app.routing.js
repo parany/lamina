@@ -1,18 +1,18 @@
 "use strict";
 var router_1 = require('@angular/router');
 var heroes_component_1 = require('./components/heroes/heroes.component');
-var contact_list_component_1 = require('./components/contact/contact-list.component');
 var contact_add_component_1 = require('./components/contact/contact-add.component');
 var hero_detail_component_1 = require('./components/hero-detail/hero-detail.component');
+var note_list_component_1 = require('./components/note/note-list.component');
 var appRoutes = [
     {
-        path: 'contact',
-        component: contact_list_component_1.ContactListComponent
+        path: '',
+        redirectTo: '/note',
+        pathMatch: 'full'
     },
     {
-        path: '',
-        redirectTo: '/contact',
-        pathMatch: 'full'
+        path: 'note',
+        component: note_list_component_1.NoteListComponent
     },
     {
         path: 'heroes',

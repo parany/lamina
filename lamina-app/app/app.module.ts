@@ -6,8 +6,9 @@ import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 
 import './rxjs-extensions';
 
-// Imports for loading & configuring the in-memory web api
 import { InMemoryDataService }  from './services/in-memory-data.service';
+
+import { EllipsisPipe } from './pipes/ellipsis.pipe';
 
 import { AppComponent }         from './components/app/app.component';
 import { ContactListComponent } from './components/contact/contact-list.component';
@@ -15,9 +16,12 @@ import { HeroesComponent }      from './components/heroes/heroes.component';
 import { HeroDetailComponent }  from './components/hero-detail/hero-detail.component';
 import { HeroSearchComponent }  from './components/hero-search/hero-search.component';
 import { ContactAddComponent }      from './components/contact/contact-add.component';
+import { NoteListComponent }      from './components/note/note-list.component';
 
 import { HeroService }          from './services/hero.service';
 import { ContactService }          from './services/contact.service';
+import { NoteService }          from './services/note.service';
+import { NoteTypeService }          from './services/note-type.service';
 
 import { routing }              from './app.routing';
 
@@ -30,16 +34,20 @@ import { routing }              from './app.routing';
     routing
   ],
   declarations: [
+    EllipsisPipe,
     AppComponent,
     ContactListComponent,
     HeroDetailComponent,
     HeroSearchComponent,
     HeroesComponent,
-    ContactAddComponent
+    ContactAddComponent,
+    NoteListComponent
   ],
   providers: [
     HeroService,
-    ContactService
+    ContactService,
+    NoteService,
+    NoteTypeService
   ],
   bootstrap: [ AppComponent ]
 })

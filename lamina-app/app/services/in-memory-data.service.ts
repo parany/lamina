@@ -4,12 +4,12 @@ import { Hero, Contact, Group, PhoneNumber, PhoneNumberType, NoteType, Note } fr
 
 var noteTypes: NoteType[] = [
   new NoteType('Mail to send', 'Write a mail to sent in the near future'),
-  new NoteType('Shopping list', 'Dress shopping list')
+  new NoteType('Shopping list', 'Dress shopping list When operating on a [List], the returned list is always a copy even when all the elements are being returned.')
 ];
 
 var notes: Note[] = [
-  { title: 'To Kem', content: 'Hi, a joke!', noteType: noteTypes[0] },
-  { title: 'Saturday', content: '*bred, *meal', noteType: noteTypes[1] }
+  new Note('To Kem', 'Hi, a joke!', noteTypes[0]),
+  new Note('Saturday', '*bred, *meal', noteTypes[1])
 ];
 
 var heroes: Hero[] = [
