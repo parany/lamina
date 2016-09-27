@@ -1,6 +1,6 @@
 "use strict";
 var router_1 = require('@angular/router');
-var note_type_list_component_1 = require('./components/note/note-type-list.component');
+var note_type_list_component_1 = require('./components/note-type/note-type-list.component');
 var appRoutes = [
     {
         path: '',

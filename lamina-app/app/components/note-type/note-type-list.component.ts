@@ -6,13 +6,13 @@ import { NoteTypeService } from '../../services/note-type.service';
 
 @Component({
   selector: 'note-list',
-  templateUrl: 'app/components/note/note-type-list.component.html',
-  styleUrls: ['app/components/note/note.css']
+  templateUrl: 'app/components/note-type/note-type-list.component.html',
+  styleUrls: ['app/components/note-type/note-type.css']
 })
 export class NoteTypeListComponent implements OnInit {
   items: NoteType[] = [];
 
-  private allContacts: NoteType[];
+  private allItems: NoteType[];
 
   constructor(
     private router: Router,
@@ -20,14 +20,14 @@ export class NoteTypeListComponent implements OnInit {
 
   onSearch(filter: string): void {
     var regex = new RegExp(filter, 'i');
-    this.items = this.allContacts.filter(c => regex.test(`${c.label} ${c.description}`));
+    this.items = this.allItems.filter(c => regex.test(`${c.label} ${c.description}`));
   }
 
   ngOnInit(): void {
     this.noteTypeService.getItems()
-      .then(contacts => {
-        this.allContacts = contacts;
-        this.items = this.allContacts;
+      .then(items => {
+        this.allItems = items;
+        this.items = this.allItems;
       });
   }
 

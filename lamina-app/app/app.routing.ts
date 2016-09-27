@@ -1,7 +1,7 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { NoteTypeListComponent }      from './components/note/note-type-list.component';
+import { NoteTypeListComponent }      from './components/note-type/note-type-list.component';
 
 const appRoutes: Routes = [
     {

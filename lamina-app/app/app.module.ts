@@ -11,7 +11,7 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 import { EllipsisPipe } from './pipes/ellipsis.pipe';
 
 import { AppComponent }         from './components/app/app.component';
-import { NoteTypeListComponent }      from './components/note/note-type-list.component';
+import { NoteTypeListComponent }      from './components/note-type/note-type-list.component';
 
 import { NoteService }          from './services/note.service';
 import { NoteTypeService }          from './services/note-type.service';
