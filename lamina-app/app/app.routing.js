@@ -1,6 +1,7 @@
 "use strict";
 var router_1 = require('@angular/router');
 var note_type_list_component_1 = require('./components/note-type/note-type-list.component');
+var note_type_add_component_1 = require('./components/note-type/note-type-add.component');
 var appRoutes = [
     {
         path: '',
@@ -10,6 +11,10 @@ var appRoutes = [
     {
         path: 'note-type',
         component: note_type_list_component_1.NoteTypeListComponent
+    },
+    {
+        path: 'note-type/add',
+        component: note_type_add_component_1.NoteTypeAddComponent
     },
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

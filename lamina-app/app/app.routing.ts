@@ -2,6 +2,7 @@ import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NoteTypeListComponent }      from './components/note-type/note-type-list.component';
+import { NoteTypeAddComponent }      from './components/note-type/note-type-add.component';
 
 const appRoutes: Routes = [
     {
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
     {
         path: 'note-type',
         component: NoteTypeListComponent
+    },
+    {
+        path: 'note-type/add',
+        component: NoteTypeAddComponent
     },
 ];
 
