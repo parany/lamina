@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
 
 import { NoteType } from '../../models/note-type'
 import { NoteTypeService } from '../../services/note-type.service';
@@ -11,18 +10,35 @@ import { NoteTypeService } from '../../services/note-type.service';
   templateUrl: 'app/components/note-type/note-type-add.component.html',
   styleUrls: ['app/components/note-type/note-type.css']
 })
-export class NoteTypeAddComponent {
+export class NoteTypeAddComponent implements OnInit {
   constructor(
     private router: Router,
     private location: Location,
-    private noteTypeService: NoteTypeService) { }
+    private route: ActivatedRoute,
+    private noteTypeService: NoteTypeService) {
+  }
 
-  item = new NoteType('', '');
+  item = new NoteType();
+  id: string;
+
+  ngOnInit(): void {
+    this.route.params.forEach((params: Params) => {
+      this.id = params['id'];
+      console.log(this.id);
+    });
+    if (this.id) {
+      this.noteTypeService.getItem(this.id).then(item =>  this.item = item);
+    }
+  }
 
   onSubmit(): void {
-    this.noteTypeService
-      .create(this.item)
-      .then(() => this.goBack());
+    let operation: Promise<NoteType>;
+    if (this.id) {
+        operation = this.noteTypeService.update(this.item);
+    } else {
+      operation = this.noteTypeService.create(this.item);
+    }
+    operation.then(() => this.goBack());
   }
 
   goBack(): void {

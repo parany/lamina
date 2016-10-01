@@ -16,6 +16,10 @@ var appRoutes = [
         path: 'note-type/add',
         component: note_type_add_component_1.NoteTypeAddComponent
     },
+    {
+        path: 'note-type/edit/:id',
+        component: note_type_add_component_1.NoteTypeAddComponent
+    },
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
 //# sourceMappingURL=app.routing.js.map

@@ -34,6 +34,7 @@ export class NoteTypeService {
     }
 
     create(item: NoteType): Promise<NoteType> {
+        item.id = Date.now().toString();
         return this.http
             .post(this.url, JSON.stringify(item), { headers: this.headers })
             .toPromise()
