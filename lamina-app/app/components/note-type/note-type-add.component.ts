@@ -22,19 +22,16 @@ export class NoteTypeAddComponent implements OnInit {
   id: string;
 
   ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-      this.id = params['id'];
-      console.log(this.id);
-    });
+    this.route.params.forEach((params: Params) => this.id = params['id']);
     if (this.id) {
-      this.noteTypeService.getItem(this.id).then(item =>  this.item = item);
+      this.noteTypeService.getItem(this.id).then(item => this.item = item);
     }
   }
 
   onSubmit(): void {
     let operation: Promise<NoteType>;
     if (this.id) {
-        operation = this.noteTypeService.update(this.item);
+      operation = this.noteTypeService.update(this.item);
     } else {
       operation = this.noteTypeService.create(this.item);
     }

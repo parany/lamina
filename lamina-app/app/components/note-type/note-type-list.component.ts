@@ -35,4 +35,9 @@ export class NoteTypeListComponent implements OnInit {
     let link = ['/note', contact.id];
     this.router.navigate(link);
   }
+
+  select(item) {
+    this.allItems.forEach(i => i.selected = false);
+    item.selected = true;
+  }
 }
