@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12e011cd-b946-4528-b2db-0bec54281aff" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.vscode/settings.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/tour-of-heroes.iml" afterPath="$PROJECT_DIR$/.idea/tour-of-heroes.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/note-type/note-type-list.component.html" afterPath="$PROJECT_DIR$/app/components/note-type/note-type-list.component.html" />
     </list>
@@ -43,8 +41,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+            <state relative-caret-position="640">
+              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -276,12 +274,20 @@
       <workItem from="1476733218270" duration="112000" />
       <workItem from="1476774644918" duration="274000" />
       <workItem from="1476795127567" duration="142000" />
-      <workItem from="1476884307404" duration="2105000" />
+      <workItem from="1476884307404" duration="2127000" />
     </task>
+    <task id="LOCAL-00001" summary="remove unnecessary files">
+      <created>1476886428970</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1476886428970</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7458000" />
+    <option name="totallyTimeSpent" value="7480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="111" y="-13" width="2462" height="1466" extended-state="6" />
@@ -317,6 +323,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="remove unnecessary files" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unnecessary files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -646,8 +656,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        <state relative-caret-position="640">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
           <folding />
         </state>
       </provider>
