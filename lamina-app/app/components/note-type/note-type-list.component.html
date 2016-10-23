@@ -22,13 +22,15 @@
         <button type="button" routerLink="/note-type/add" class="btn btn-default">Add</button>
     </table>
 </div>
-<div class="col-md-4">
+<div id="details" class="col-md-4" *ngIf="selectedItem">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Details</h3>
         </div>
         <div class="panel-body">
-            Panel content
+            <b>Created At: </b> {{ selectedItem.createdAt | date:"fullDate" }} <br/>
+            <b>Updated At: </b> {{ selectedItem.updatedAt | date:"fullDate" }} <br/>
+            <b>Number of Notes Associated With: </b> {{ selectedItem.nbOfNotes }} <br/>
         </div>
     </div>
 </div>

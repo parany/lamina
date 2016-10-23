@@ -3,9 +3,9 @@ import {NoteType} from './note-type';
 
 export class Note extends Base {
     constructor(
-        title: string,
-        content: string,
-        noteType: NoteType) {
+        public title: string,
+        public content: string,
+        public noteType: NoteType) {
         super('', '', '', new Date(), new Date())
     }
 }

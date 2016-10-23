@@ -1,13 +1,15 @@
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
 import { NoteType } from '../models/note-type';
+import { Note } from "../models/note";
 
 @Injectable()
 export class NoteTypeService {
     private url = 'app/noteTypes';
+    private urlNotes = 'app/notes';
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
     constructor(private http: Http) { }
@@ -50,8 +52,19 @@ export class NoteTypeService {
             .catch(this.handleError);
     }
 
+    getNumberOfNotes(id: string): Promise<number> {
+        return this.http.get(this.urlNotes)
+            .toPromise()
+            .then(response => {
+                let allNotes = response.json().data as Note[];
+                let notes = allNotes.filter(n => n.noteType.id == id);
+                return notes.length;
+            })
+            .catch(this.handleError);
+    }
+
     private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred', error);
         return Promise.reject(error.message || error);
     }
 }

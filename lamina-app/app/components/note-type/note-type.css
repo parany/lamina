@@ -91,3 +91,7 @@ table.note-type tr.selected {
     background: black;
     color: white;
 }
+
+#details {
+    font-size: 12px;
+}
