@@ -15,10 +15,10 @@ export class NoteTypeListComponent implements OnInit {
     selectedItem: NoteType;
     private allItems: NoteType[];
 
-    constructor(private router: Router,
+    constructor(
+        private router: Router,
         private noteTypeService: NoteTypeService,
-        private noteService: NoteService) {
-    }
+        private noteService: NoteService) {}
 
     onSearch(filter: string): void {
         var regex = new RegExp(filter, 'i');
@@ -26,15 +26,9 @@ export class NoteTypeListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.noteTypeService.getItems().then(items => {
+        this.noteTypeService.getItemsWithNotesCount().then(items => {
             this.allItems = items;
             this.items = this.allItems;
-            return this.noteService.getItems();
-        }).then(allNotes => {
-            this.allItems.forEach(item => {
-                let notes = allNotes.filter(n => n.noteType.id == item.id);
-                item.nbOfNotes = notes.length;
-            });
         });
     }
 

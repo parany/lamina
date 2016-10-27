@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { NoteType } from '../models/note-type';
 import { Note } from "../models/note";
+import { NoteService } from "../services/note.service";
 
 @Injectable()
 export class NoteTypeService {
@@ -12,7 +13,10 @@ export class NoteTypeService {
     private urlNotes = 'app/notes';
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
-    constructor(private http: Http) { }
+    constructor(
+        private http: Http,
+        private noteService: NoteService
+    ) { }
 
     public getItems(): Promise<NoteType[]> {
         return this.http.get(this.url)
@@ -21,9 +25,25 @@ export class NoteTypeService {
             .catch(this.handleError);
     }
 
+    public getItemsWithNotesCount(): Promise<NoteType[]> {
+        let allItems: NoteType[] = [];
+        const promise = new Promise<NoteType[]>(resolve => {
+            this.getItems().then(items => {
+                allItems = items;
+                return this.noteService.getItems();
+            }).then(allNotes => {
+                allItems.forEach(item => {
+                    let notes = allNotes.filter(n => n.noteType.id == item.id);
+                    item.nbOfNotes = notes.length;
+                });
+                resolve(allItems);
+            });
+        });
+        return promise;
+    }
+
     getItem(id: string): Promise<NoteType> {
-        return this.getItems()
-            .then(items => items.find(item => item.id === id));
+        return this.getItems().then(items => items.find(item => item.id === id));
     }
 
     update(item: NoteType): Promise<NoteType> {
