@@ -13,6 +13,7 @@ import { EllipsisPipe } from './pipes/ellipsis.pipe';
 import { AppComponent }         from './components/app/app.component';
 import { NoteTypeListComponent }  from './components/note-type/note-type-list.component';
 import { NoteTypeAddComponent }  from './components/note-type/note-type-add.component';
+import { NoteTypeDetailComponent }  from './components/note-type/note-type-detail.component';
 
 import { NoteService }          from './services/note.service';
 import { NoteTypeService }          from './services/note-type.service';
@@ -31,7 +32,8 @@ import { routing }              from './app.routing';
     EllipsisPipe,
     AppComponent,
     NoteTypeListComponent,
-    NoteTypeAddComponent
+    NoteTypeAddComponent,
+    NoteTypeDetailComponent
   ],
   providers: [
     NoteService,

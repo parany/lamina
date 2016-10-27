@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import {NoteType} from '../../models/note-type'
-import {NoteTypeService} from '../../services/note-type.service';
+import { NoteType } from '../../models/note-type'
+import { NoteTypeService } from '../../services/note-type.service';
+import { NoteService } from '../../services/note.service';
 
 @Component({
     selector: 'note-list',
@@ -15,7 +16,8 @@ export class NoteTypeListComponent implements OnInit {
     private allItems: NoteType[];
 
     constructor(private router: Router,
-                private noteTypeService: NoteTypeService) {
+        private noteTypeService: NoteTypeService,
+        private noteService: NoteService) {
     }
 
     onSearch(filter: string): void {
@@ -24,11 +26,16 @@ export class NoteTypeListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.noteTypeService.getItems()
-            .then(items => {
-                this.allItems = items;
-                this.items = this.allItems;
+        this.noteTypeService.getItems().then(items => {
+            this.allItems = items;
+            this.items = this.allItems;
+            return this.noteService.getItems();
+        }).then(allNotes => {
+            this.allItems.forEach(item => {
+                let notes = allNotes.filter(n => n.noteType.id == item.id);
+                item.nbOfNotes = notes.length;
             });
+        });
     }
 
     gotoDetail(contact: NoteType): void {
@@ -40,6 +47,5 @@ export class NoteTypeListComponent implements OnInit {
         this.allItems.forEach(i => i.selected = false);
         item.selected = true;
         this.selectedItem = item;
-        this.noteTypeService.getNumberOfNotes(item.id).then(nb => item.nbOfNotes = nb);
     }
 }

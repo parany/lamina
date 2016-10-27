@@ -1,5 +1,5 @@
-import {Base} from './base';
-import {NoteType} from './note-type';
+import { Base } from './base';
+import { NoteType } from './note-type';
 
 export class Note extends Base {
     constructor(

@@ -52,17 +52,6 @@ export class NoteTypeService {
             .catch(this.handleError);
     }
 
-    getNumberOfNotes(id: string): Promise<number> {
-        return this.http.get(this.urlNotes)
-            .toPromise()
-            .then(response => {
-                let allNotes = response.json().data as Note[];
-                let notes = allNotes.filter(n => n.noteType.id == id);
-                return notes.length;
-            })
-            .catch(this.handleError);
-    }
-
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);

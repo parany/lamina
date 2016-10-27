@@ -95,3 +95,11 @@ table.note-type tr.selected {
 #details {
     font-size: 12px;
 }
+
+button.undeletable {
+    color: red;
+}
+
+#details-note-type dd {
+    margin-bottom: 12px;
+}

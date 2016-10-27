@@ -1,0 +1,20 @@
+<h2>{{ item.label }}</h2>
+
+<dl id="details-note-type" class="dl‐horizontal">
+    <dt>Description</dt>
+    <dd>{{ item.description }}</dd>
+    <dt>Created By</dt>
+    <dd>{{ item.createdBy }}</dd>
+    <dt>Updated By</dt>
+    <dd>{{ item.updatedBy }}</dd>
+    <dt>Created At</dt>
+    <dd>{{ item.createdAt | date:"fullDate" }}</dd>
+    <dt>Updated At</dt>
+    <dd>{{ item.updatedAt | date:"fullDate" }}</dd>
+    <dt>Nb of Notes associated with</dt>
+    <dd>{{ item.nbOfNotes }}</dd>
+</dl>
+
+<button type="button" class="btn btn-default" (click)="goBack()">Back to list</button>
+<button type="button" class="btn btn-default">Delete</button>
+<button type="button" class="btn btn-success" [routerLink]="['/note-type/edit/', item.id]">Edit</button>
