@@ -37,6 +37,13 @@ export class NoteTypeListComponent implements OnInit {
         this.router.navigate(link);
     }
 
+    delete(item: NoteType): void {
+        this.noteTypeService.delete(item.id).then(() => {
+            this.allItems = this.allItems.filter(i => i.id != item.id);
+            this.items = this.allItems;
+        });
+    }
+
     select(item: NoteType) {
         this.allItems.forEach(i => i.selected = false);
         item.selected = true;

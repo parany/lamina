@@ -13,7 +13,7 @@
 					<button type="button" class="btn btn-default" [routerLink]="['/note-type/detail/', item.id]" aria-label="Left Align">
                         <span class="glyphicon glyphicon-open" aria-hidden="true"></span>
                     </button>
-					<button type="button" *ngIf="!item.nbOfNotes" class="btn btn-default" aria-label="Left Align">
+					<button type="button" (click)="delete(item)" *ngIf="!item.nbOfNotes" class="btn btn-default" aria-label="Left Align">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </button>
 				</td>
