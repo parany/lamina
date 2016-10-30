@@ -6,39 +6,41 @@ import { NoteType } from '../../models/note-type'
 import { NoteTypeService } from '../../services/note-type.service';
 
 @Component({
-  selector: 'note-list',
-  templateUrl: 'app/components/note-type/note-type-add.component.html',
-  styleUrls: ['app/components/note-type/note-type.css']
+    selector: 'note-list',
+    templateUrl: 'app/components/note-type/note-type-add.component.html',
+    styleUrls: ['app/components/note-type/note-type.css']
 })
 export class NoteTypeAddComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private location: Location,
-    private route: ActivatedRoute,
-    private noteTypeService: NoteTypeService) {
-  }
-
-  item = new NoteType();
-  id: string;
-
-  ngOnInit(): void {
-    this.route.params.forEach((params: Params) => this.id = params['id']);
-    if (this.id) {
-      this.noteTypeService.getItem(this.id).then(item => this.item = item);
+    constructor(
+        private router: Router,
+        private location: Location,
+        private route: ActivatedRoute,
+        private noteTypeService: NoteTypeService) {
     }
-  }
 
-  onSubmit(): void {
-    let operation: Promise<NoteType>;
-    if (this.id) {
-      operation = this.noteTypeService.update(this.item);
-    } else {
-      operation = this.noteTypeService.create(this.item);
+    item = new NoteType();
+    id: string;
+    operation: string = 'Add';
+
+    ngOnInit(): void {
+        this.route.params.forEach((params: Params) => this.id = params['id']);
+        if (this.id) {
+            this.operation = 'Edit';
+            this.noteTypeService.getItem(this.id).then(item => this.item = item);
+        }
     }
-    operation.then(() => this.goBack());
-  }
 
-  goBack(): void {
-    this.location.back();
-  }
+    onSubmit(): void {
+        let operation: Promise<NoteType>;
+        if (this.id) {
+            operation = this.noteTypeService.update(this.item);
+        } else {
+            operation = this.noteTypeService.create(this.item);
+        }
+        operation.then(() => this.goBack());
+    }
+
+    goBack(): void {
+        this.location.back();
+    }
 }
