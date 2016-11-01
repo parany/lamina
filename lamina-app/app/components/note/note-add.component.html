@@ -1,0 +1,31 @@
+<h2>Note - {{ operation }}</h2>
+<form class="form-horizontal" (ngSubmit)="onSubmit()" #itemForm="ngForm">
+    <div class="form-group">
+		<select class="form‐control col-md-12 input-lg" [(ngModel)]="item.noteType" name="noteType">
+            <option *ngFor="let noteType of noteTypes" [ngValue]="noteType">{{ noteType.title }}</option>
+        </select>
+	</div>
+	<div class="form-group">
+		<input type="text"
+                placeholder="Title"
+                class="form-control"
+                id="label"
+                required
+                [(ngModel)]="item.title"
+                name="label"
+		/>
+	</div>
+	<div class="form-group">
+		<textarea class="form-control"
+                    placeholder="Content"
+                    rows="5"
+                    id="content"
+                    required
+                    name="content"
+                    [(ngModel)]="item.content"></textarea>
+	</div>
+    <div class="form-group">
+        <button type="button" class="btn btn-default" (click)="goBack()">Back to list</button>
+        <button type="submit" class="btn btn-success btn-right" [disabled]="!itemForm.form.valid">Save</button>
+    </div>
+</form>

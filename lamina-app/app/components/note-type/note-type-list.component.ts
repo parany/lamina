@@ -22,7 +22,7 @@ export class NoteTypeListComponent implements OnInit {
 
     onSearch(filter: string): void {
         var regex = new RegExp(filter, 'i');
-        this.items = this.allItems.filter(c => regex.test(`${c.label} ${c.description}`));
+        this.items = this.allItems.filter(c => regex.test(`${c.title} ${c.description}`));
     }
 
     ngOnInit(): void {

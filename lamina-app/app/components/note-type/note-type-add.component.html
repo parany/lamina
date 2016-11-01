@@ -2,12 +2,12 @@
 <form (ngSubmit)="onSubmit()" #itemForm="ngForm">
     <div class="form-group">
         <input type="text"
-               placeholder="Label"
+               placeholder="Title"
                class="form-control"
-               id="label"
+               id="title"
                required
-               [(ngModel)]="item.label"
-               name="label"
+               [(ngModel)]="item.title"
+               name="title"
                #name="ngModel" />
     </div>
     <div class="form-group">
@@ -19,6 +19,8 @@
                   name="description"
                   [(ngModel)]="item.description"></textarea>
     </div>
-    <button type="submit" class="btn btn-success" [disabled]="!itemForm.form.valid">Submit</button>
-    <button type="button" class="btn btn-default" (click)="goBack()">Back to list</button>
+    <div class="form-group">
+        <button type="button" class="btn btn-default" (click)="goBack()">Back to list</button>
+        <button type="submit" class="btn btn-success btn-right" [disabled]="!itemForm.form.valid">Save</button>
+    </div>
 </form>

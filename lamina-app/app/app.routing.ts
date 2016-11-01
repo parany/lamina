@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { NoteTypeListComponent }      from './components/note-type/note-type-list.component';
 import { NoteTypeAddComponent }      from './components/note-type/note-type-add.component';
 import { NoteTypeDetailComponent }      from './components/note-type/note-type-detail.component';
+import { NoteListComponent }      from './components/note/note-list.component';
+import { NoteAddComponent }      from './components/note/note-add.component';
 
 const appRoutes: Routes = [
     {
@@ -26,6 +28,15 @@ const appRoutes: Routes = [
     {
         path: 'note-type/detail/:id',
         component: NoteTypeDetailComponent
+    },
+
+    {
+        path: 'note',
+        component: NoteListComponent
+    },
+    {
+        path: 'note/add',
+        component: NoteAddComponent
     },
 ];
 

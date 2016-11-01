@@ -4,5 +4,7 @@ export class Base {
         public createdBy: string,
         public updatedBy: string,
         public createdAt: Date,
-        public updatedAt: Date) { }
+        public updatedAt: Date,
+        public selected: boolean = false
+    ) { }
 }
