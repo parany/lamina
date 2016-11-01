@@ -18,7 +18,7 @@ noteTypes[1].updatedBy = 'any';
 
 var notes: Note[] = [
   new Note('1', 'To Kem', 'Hi, a joke!', noteTypes[0]),
-  new Note('2', 'Saturday', '*bred, *meal', noteTypes[0])
+  new Note('2', 'Saturday', '*bred, *meal', noteTypes[1])
 ];
 
 export class InMemoryDataService implements InMemoryWebApiModule {

@@ -7,6 +7,7 @@ import { NoteTypeEditComponent } from './components/note-type/note-type-edit.com
 import { NoteTypeDetailComponent } from './components/note-type/note-type-detail.component';
 import { NoteListComponent } from './components/note/note-list.component';
 import { NoteAddComponent } from './components/note/note-add.component';
+import { NoteEditComponent } from './components/note/note-edit.component';
 
 const appRoutes: Routes = [
     {
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'note/edit/:id',
-        component: NoteAddComponent
+        component: NoteEditComponent
     },
 ];
 

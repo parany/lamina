@@ -6,6 +6,7 @@ var note_type_edit_component_1 = require('./components/note-type/note-type-edit.
 var note_type_detail_component_1 = require('./components/note-type/note-type-detail.component');
 var note_list_component_1 = require('./components/note/note-list.component');
 var note_add_component_1 = require('./components/note/note-add.component');
+var note_edit_component_1 = require('./components/note/note-edit.component');
 var appRoutes = [
     {
         path: '',
@@ -38,7 +39,7 @@ var appRoutes = [
     },
     {
         path: 'note/edit/:id',
-        component: note_add_component_1.NoteAddComponent
+        component: note_edit_component_1.NoteEditComponent
     },
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

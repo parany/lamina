@@ -17,6 +17,7 @@ import { NoteTypeEditComponent }  from './components/note-type/note-type-edit.co
 import { NoteTypeDetailComponent }  from './components/note-type/note-type-detail.component';
 import { NoteListComponent }  from './components/note/note-list.component';
 import { NoteAddComponent }  from './components/note/note-add.component';
+import { NoteEditComponent }  from './components/note/note-edit.component';
 
 import { NoteService }          from './services/note.service';
 import { NoteTypeService }          from './services/note-type.service';
@@ -36,10 +37,11 @@ import { routing }              from './app.routing';
     AppComponent,
     NoteTypeListComponent,
     NoteTypeAddComponent,
+    NoteTypeEditComponent,
     NoteTypeDetailComponent,
     NoteListComponent,
     NoteAddComponent,
-    NoteTypeEditComponent,
+    NoteEditComponent,
   ],
   providers: [
     NoteService,
