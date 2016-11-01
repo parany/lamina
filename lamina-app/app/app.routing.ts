@@ -38,6 +38,10 @@ const appRoutes: Routes = [
         path: 'note/add',
         component: NoteAddComponent
     },
+    {
+        path: 'note/edit/:id',
+        component: NoteAddComponent
+    },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

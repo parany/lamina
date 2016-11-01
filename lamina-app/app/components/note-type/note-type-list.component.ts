@@ -29,6 +29,7 @@ export class NoteTypeListComponent implements OnInit {
         this.noteTypeService.getItemsWithNotesCount().then(items => {
             this.allItems = items;
             this.items = this.allItems;
+            this.select(items[0]);
         });
     }
 

@@ -33,7 +33,8 @@ export class NoteAddComponent implements OnInit {
         }
         this.noteTypeService.getItems().then(items => {
             this.noteTypes = items;
-            this.item.noteType = items[0];
+            if (!this.id)
+                this.item.noteType = items[0];
         });
     }
 
