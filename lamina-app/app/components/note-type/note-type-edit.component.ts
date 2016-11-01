@@ -10,17 +10,25 @@ import { NoteTypeService } from '../../services/note-type.service';
     templateUrl: 'app/components/note-type/note-type-edit.component.html',
     styleUrls: ['app/components/note-type/note-type.css']
 })
-export class NoteTypeAddComponent {
+export class NoteTypeEditComponent implements OnInit {
     constructor(
+        private router: Router,
         private location: Location,
+        private route: ActivatedRoute,
         private noteTypeService: NoteTypeService) {
     }
 
     item = new NoteType();
-    operation: string = 'Add';
+    id: string;
+    operation: string = 'Edit';
+
+    ngOnInit(): void {
+        this.route.params.forEach((params: Params) => this.id = params['id']);
+        this.noteTypeService.getItem(this.id).then(item => this.item = item);
+    }
 
     onSubmit(): void {
-        this.noteTypeService.create(this.item).then(() => this.goBack());
+        this.noteTypeService.update(this.item).then(() => this.goBack());
     }
 
     goBack(): void {
