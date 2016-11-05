@@ -8,6 +8,7 @@ import { NoteTypeDetailComponent } from './components/note-type/note-type-detail
 import { NoteListComponent } from './components/note/note-list.component';
 import { NoteAddComponent } from './components/note/note-add.component';
 import { NoteEditComponent } from './components/note/note-edit.component';
+import { NoteDetailComponent } from './components/note/note-detail.component';
 
 const appRoutes: Routes = [
     {
@@ -43,6 +44,10 @@ const appRoutes: Routes = [
     {
         path: 'note/edit/:id',
         component: NoteEditComponent
+    },
+    {
+        path: 'note/detail/:id',
+        component: NoteDetailComponent
     },
 ];
 
