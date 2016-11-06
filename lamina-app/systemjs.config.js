@@ -24,6 +24,7 @@
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+      'moment': 'npm:moment',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -36,6 +37,11 @@
       },
       'angular2-in-memory-web-api': {
         main: './index.js',
+        defaultExtension: 'js'
+      },
+      moment: {
+        main: 'moment.js',
+        type: 'cjs',
         defaultExtension: 'js'
       }
     }
